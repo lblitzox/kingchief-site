@@ -20,6 +20,7 @@
       padding: 20px;
       background: #111;
       border-bottom: 1px solid #333;
+      flex-wrap: wrap;
     }
 
     .logo {
@@ -44,6 +45,16 @@
       margin: 20px;
       display: flex;
       gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .socials a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
     }
 
     .socials svg {
@@ -51,11 +62,12 @@
       height: 32px;
       fill: #fff;
       cursor: pointer;
-      transition: transform 0.3s;
+      transition: transform 0.3s ease, fill 0.3s ease;
     }
 
     .socials svg:hover {
       transform: scale(1.2);
+      fill: #00ff88;
     }
 
     .main-video {
@@ -78,6 +90,22 @@
       font-size: 14px;
       color: #666;
     }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        margin-top: 10px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px 10px 0 0;
+      }
+    }
   </style>
 </head>
 <body>
@@ -94,15 +122,21 @@
   <div class="socials">
     <!-- Kick -->
     <a href="https://kick.com/kingchief" target="_blank" title="Kick">
-      <svg viewBox="0 0 512 512"><path d="M392 120H120v272h96v-88h64l56 88h80l-64-96 64-96h-80l-56 88h-64v-88h176z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path d="M120 120h96v88h64l56-88h80l-64 96 64 96h-80l-56-88h-64v88h-96V120z"/>
+      </svg>
     </a>
     <!-- YouTube -->
     <a href="https://youtube.com/@KingChoif" target="_blank" title="YouTube">
-      <svg viewBox="0 0 576 512"><path d="M549.7 124.1c-6.3-23.7-24.8-42.2-48.5-48.5C456.5 64 288 64 288 64s-168.5 0-213.2 11.6c-23.7 6.3-42.2 24.8-48.5 48.5C16.7 168.8 16 224 16 224s.7 55.2 10.3 99.9c6.3 23.7 24.8 42.2 48.5 48.5C119.5 384 288 384 288 384s168.5 0 213.2-11.6c23.7-6.3 42.2-24.8 48.5-48.5 9.6-44.7 10.3-99.9 10.3-99.9s-.7-55.2-10.3-99.9zM232 312V136l142 88-142 88z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+        <path d="M549.7 124.1c-6.3-23.7-24.8-42.2-48.5-48.5C456.5 64 288 64 288 64S119.5 64 74.8 75.6c-23.7 6.3-42.2 24.8-48.5 48.5C16.7 168.8 16 224 16 224s.7 55.2 10.3 99.9c6.3 23.7 24.8 42.2 48.5 48.5C119.5 384 288 384 288 384s168.5 0 213.2-11.6c23.7-6.3 42.2-24.8 48.5-48.5 9.6-44.7 10.3-99.9 10.3-99.9s-.7-55.2-10.3-99.9zM232 312V136l142 88-142 88z"/>
+      </svg>
     </a>
     <!-- TikTok -->
     <a href="https://www.tiktok.com/@kingchoif" target="_blank" title="TikTok">
-      <svg viewBox="0 0 448 512"><path d="M448 209.9v125.1c-30.7 0-60.4-5.3-88.3-15.1v92.1c0 54.5-44.2 98.8-98.8 98.8s-98.8-44.2-98.8-98.8 44.2-98.8 98.8-98.8c8.8 0 17.3 1.2 25.4 3.3v60.7c-8.1-2.1-16.6-3.3-25.4-3.3-34.5 0-62.5 28-62.5 62.5s28 62.5 62.5 62.5 62.5-28 62.5-62.5v-299.6h61.7c0 45.1 36.6 81.7 81.7 81.7z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path d="M448 209.9v125.1c-30.7 0-60.4-5.3-88.3-15.1v92.1c0 54.5-44.2 98.8-98.8 98.8s-98.8-44.2-98.8-98.8 44.2-98.8 98.8-98.8c8.8 0 17.3 1.2 25.4 3.3v60.7c-8.1-2.1-16.6-3.3-25.4-3.3-34.5 0-62.5 28-62.5 62.5s28 62.5 62.5 62.5 62.5-28 62.5-62.5v-299.6h61.7c0 45.1 36.6 81.7 81.7 81.7z"/>
+      </svg>
     </a>
   </div>
 
@@ -114,7 +148,7 @@
   </div>
 
   <footer>
-    &copy; 2025 KINGCHIEF. Made for the streets. Not by AI. 💯
+    &copy; 2025 KINGCHIEF💯
   </footer>
 </body>
 </html>
