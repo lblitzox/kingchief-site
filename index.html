@@ -36,48 +36,20 @@
 </head>
 <body>
   <h1>KingChief YouTube VODs</h1>
-  <div id="videos" class="video-grid"></div>
-
-  <script>
-    const API_KEY = 'AIzaSyACiDVrDOBg4yOoyyMGG1hngy-Y4MTsE9g';  // Your YouTube API key
-    const CHANNEL_ID = 'UCUuqJse8iS2E4XP1p9u20zg'; // KingChoif channel ID
-
-    async function fetchUploadsPlaylist() {
-      const res = await fetch(`https://www.googleapis.com/youtube/v3/channels?part=contentDetails&id=${CHANNEL_ID}&key=${API_KEY}`);
-      const data = await res.json();
-      return data.items[0].contentDetails.relatedPlaylists.uploads;
-    }
-
-    async function fetchVideos(playlistId, pageToken = '') {
-      const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=20&playlistId=${playlistId}&key=${API_KEY}${pageToken ? '&pageToken=' + pageToken : ''}`;
-      const res = await fetch(url);
-      return await res.json();
-    }
-
-    async function renderVideos() {
-      const uploadsPlaylistId = await fetchUploadsPlaylist();
-      let nextPageToken = '';
-      const container = document.getElementById('videos');
-
-      do {
-        const videosData = await fetchVideos(uploadsPlaylistId, nextPageToken);
-        videosData.items.forEach(item => {
-          const videoId = item.snippet.resourceId.videoId;
-          const title = item.snippet.title;
-
-          const videoDiv = document.createElement('div');
-          videoDiv.innerHTML = `
-            <iframe src="https://www.youtube.com/embed/${videoId}" allowfullscreen></iframe>
-            <div class="vod-title">${title}</div>
-          `;
-          container.appendChild(videoDiv);
-        });
-
-        nextPageToken = videosData.nextPageToken;
-      } while(nextPageToken);
-    }
-
-    renderVideos().catch(console.error);
-  </script>
+  <div class="video-grid">
+    <!-- Manually add videos here -->
+    <div>
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+      <div class="vod-title">Example Video 1</div>
+    </div>
+    <div>
+      <iframe src="https://www.youtube.com/embed/8ZcmTl_1ER8" allowfullscreen></iframe>
+      <div class="vod-title">Example Video 2</div>
+    </div>
+    <div>
+      <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ" allowfullscreen></iframe>
+      <div class="vod-title">Example Video 3</div>
+    </div>
+  </div>
 </body>
 </html>
