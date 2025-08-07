@@ -3,148 +3,118 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>KingChief.WTF</title>
+  <title>KingChief</title>
   <style>
-    * {
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
-    body {
-      background: linear-gradient(to top, #1a002e, #3a0066);
-      color: white;
-      min-height: 100vh;
-      overflow-x: hidden;
     }
 
     header {
-      background: rgba(0, 0, 0, 0.5);
-      padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding: 20px;
+      background: #111;
+      border-bottom: 1px solid #333;
     }
 
     .logo {
-      font-size: 2rem;
+      font-size: 24px;
       font-weight: bold;
-      color: #ffffff;
+      letter-spacing: 1px;
     }
 
     nav a {
-      margin-left: 25px;
-      color: white;
+      color: #fff;
+      margin-left: 20px;
       text-decoration: none;
-      font-size: 1rem;
-      transition: color 0.2s;
+      font-weight: 500;
+      transition: color 0.3s;
     }
 
     nav a:hover {
-      color: #bb86fc;
-    }
-
-    .hero-video {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 40px 0;
-    }
-
-    .hero-video iframe {
-      width: 90%;
-      max-width: 1000px;
-      height: 550px;
-      border: 4px solid white;
-      border-radius: 12px;
-      box-shadow: 0 0 20px #bb86fc;
+      color: #00ff88;
     }
 
     .socials {
+      margin: 20px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .socials svg {
+      width: 32px;
+      height: 32px;
+      fill: #fff;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .socials svg:hover {
+      transform: scale(1.2);
+    }
+
+    .main-video {
+      margin: 40px auto;
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
-      gap: 40px;
-      padding: 40px;
+      max-width: 90%;
     }
 
-    .socials a img {
-      width: 60px;
-      height: 60px;
-      filter: brightness(0) invert(1);
-      transition: transform 0.3s, filter 0.3s;
-    }
-
-    .socials a:hover img {
-      transform: scale(1.2);
-      filter: drop-shadow(0 0 8px #bb86fc);
+    video {
+      width: 100%;
+      max-width: 900px;
+      border-radius: 12px;
+      border: 2px solid #222;
     }
 
     footer {
       text-align: center;
-      padding: 30px;
-      color: rgba(255,255,255,0.6);
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 600px) {
-      .hero-video iframe {
-        height: 300px;
-      }
-
-      nav a {
-        font-size: 0.9rem;
-        margin-left: 15px;
-      }
+      padding: 30px 10px;
+      font-size: 14px;
+      color: #666;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <div class="logo">KingChief.WTF</div>
+    <div class="logo">KINGCHIEF.WTF</div>
     <nav>
-      <a href="#">Home</a>
-      <a href="#">VODs</a>
-      <a href="#">Shorts</a>
-      <a href="#">Socials</a>
-      <a href="#">Discord</a>
+      <a href="#videos">Videos</a>
+      <a href="https://kick.com/kingchief" target="_blank">Live</a>
+      <a href="https://discord.gg/JsUVx2XWkD" target="_blank">Discord</a>
+      <a href="https://www.youtube.com/@KingChoif" target="_blank">YouTube</a>
     </nav>
   </header>
 
-  <div class="hero-video">
-    <iframe 
-      src="https://www.youtube.com/embed/fF4LJbKnP4U?autoplay=1&mute=1&loop=1&playlist=fF4LJbKnP4U"
-      title="Featured Video"
-      frameborder="0"
-      allow="autoplay; encrypted-media"
-      allowfullscreen>
-    </iframe>
+  <div class="socials">
+    <!-- Kick -->
+    <a href="https://kick.com/kingchief" target="_blank" title="Kick">
+      <svg viewBox="0 0 512 512"><path d="M392 120H120v272h96v-88h64l56 88h80l-64-96 64-96h-80l-56 88h-64v-88h176z"/></svg>
+    </a>
+    <!-- YouTube -->
+    <a href="https://youtube.com/@KingChoif" target="_blank" title="YouTube">
+      <svg viewBox="0 0 576 512"><path d="M549.7 124.1c-6.3-23.7-24.8-42.2-48.5-48.5C456.5 64 288 64 288 64s-168.5 0-213.2 11.6c-23.7 6.3-42.2 24.8-48.5 48.5C16.7 168.8 16 224 16 224s.7 55.2 10.3 99.9c6.3 23.7 24.8 42.2 48.5 48.5C119.5 384 288 384 288 384s168.5 0 213.2-11.6c23.7-6.3 42.2-24.8 48.5-48.5 9.6-44.7 10.3-99.9 10.3-99.9s-.7-55.2-10.3-99.9zM232 312V136l142 88-142 88z"/></svg>
+    </a>
+    <!-- TikTok -->
+    <a href="https://www.tiktok.com/@kingchoif" target="_blank" title="TikTok">
+      <svg viewBox="0 0 448 512"><path d="M448 209.9v125.1c-30.7 0-60.4-5.3-88.3-15.1v92.1c0 54.5-44.2 98.8-98.8 98.8s-98.8-44.2-98.8-98.8 44.2-98.8 98.8-98.8c8.8 0 17.3 1.2 25.4 3.3v60.7c-8.1-2.1-16.6-3.3-25.4-3.3-34.5 0-62.5 28-62.5 62.5s28 62.5 62.5 62.5 62.5-28 62.5-62.5v-299.6h61.7c0 45.1 36.6 81.7 81.7 81.7z"/></svg>
+    </a>
   </div>
 
-  <div class="socials">
-    <a href="https://kick.com/kingchief" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Kick.com_Logo_White.png" alt="Kick">
-    </a>
-    <a href="https://youtube.com/@KingChoif" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Youtube%28amin%29.png" alt="YouTube">
-    </a>
-    <a href="https://tiktok.com/@kingchoif" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/TikTok_White_Icon.png" alt="TikTok">
-    </a>
-    <a href="https://discord.gg/JsUVx2XWkD" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/Discord_logo_white.svg" alt="Discord">
-    </a>
-    <a href="https://instagram.com/kingchiefx" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon_white.svg" alt="Instagram">
-    </a>
+  <div class="main-video" id="videos">
+    <video autoplay muted loop playsinline>
+      <source src="gallery.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
   </div>
 
   <footer>
-    &copy; 2025 KingChief — All Rights Reserved. Site by The Block.
+    &copy; 2025 KINGCHIEF. Made for the streets. Not by AI. 💯
   </footer>
-
 </body>
 </html>
