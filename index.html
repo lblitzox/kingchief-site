@@ -15,6 +15,21 @@
     h1, h2 {
       margin-bottom: 1rem;
     }
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .socials a img {
+      width: 32px;
+      height: 32px;
+      filter: brightness(0) invert(1);
+      transition: transform 0.2s;
+    }
+    .socials a:hover img {
+      transform: scale(1.1);
+    }
     .video-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
@@ -36,6 +51,24 @@
 </head>
 <body>
   <h1>KingChief YouTube VODs</h1>
+
+  <div class="socials">
+    <a href="#" target="_blank" title="Discord">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/discord.svg" alt="Discord" />
+    </a>
+    <a href="https://www.youtube.com/@KingChoif" target="_blank" title="YouTube">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/youtube.svg" alt="YouTube" />
+    </a>
+    <a href="https://twitter.com/ChiefzBlock" target="_blank" title="Twitter">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/twitter.svg" alt="Twitter" />
+    </a>
+    <a href="https://kick.com/kingchief" target="_blank" title="Kick">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/kick.svg" alt="Kick" />
+    </a>
+    <a href="https://tiktok.com/@kingchoif" target="_blank" title="TikTok">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/tiktok.svg" alt="TikTok" />
+    </a>
+  </div>
 
   <h2>Popular Videos</h2>
   <div class="video-grid">
