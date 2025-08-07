@@ -2,193 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>KingChief Videos</title>
+  <title>KingChief Media</title>
   <style>
     body {
-      background: #0d0d0d;
+      background: #121212;
       color: #eee;
       font-family: Arial, sans-serif;
-      margin: 2rem;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1, h2 {
       text-align: center;
     }
-    h1, h2, h3 {
-      margin-bottom: 1rem;
-    }
-    .socials {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-    .socials a img {
-      width: 32px;
-      height: 32px;
-      filter: brightness(0) invert(1);
-      transition: transform 0.2s;
-    }
-    .socials a:hover img {
-      transform: scale(1.1);
-    }
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
-      gap: 1rem;
-      max-width: 960px;
-      margin: 0 auto 3rem;
+    section {
+      margin-bottom: 40px;
     }
     iframe {
       width: 100%;
-      aspect-ratio: 16 / 9;
-      border-radius: 8px;
+      max-width: 560px;
+      height: 315px;
+      margin: 10px auto;
+      display: block;
+      border-radius: 10px;
       border: none;
-    }
-    .vod-title {
-      margin-top: 0.5rem;
-      font-weight: bold;
-    }
-    button.toggle-btn {
-      background: #222;
-      color: #eee;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-bottom: 1rem;
-      font-size: 1rem;
-    }
-    button.toggle-btn:hover {
-      background: #555;
     }
   </style>
 </head>
 <body>
-  <h1>KingChief Videos</h1>
+  <h1>KingChief Media</h1>
 
-  <div class="socials">
-    <a href="https://discord.gg/JsUVx2XWkD" target="_blank" title="Discord" rel="noopener noreferrer">
-      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/discord.svg" alt="Discord" />
-    </a>
-    <a href="https://youtube.com/@KingChoif" target="_blank" title="YouTube" rel="noopener noreferrer">
-      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/youtube.svg" alt="YouTube" />
-    </a>
-    <a href="https://twitter.com/ChiefzBlock" target="_blank" title="Twitter" rel="noopener noreferrer">
-      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/twitter.svg" alt="Twitter" />
-    </a>
-    <a href="https://instagram.com/kingchiefx" target="_blank" title="Instagram" rel="noopener noreferrer">
-      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/instagram.svg" alt="Instagram" />
-    </a>
-    <a href="https://tiktok.com/@kingchoif" target="_blank" title="TikTok" rel="noopener noreferrer">
-      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/tiktok.svg" alt="TikTok" />
-    </a>
-  </div>
+  <section>
+    <h2>YouTube Videos</h2>
+    <iframe src="https://www.youtube.com/embed/FDInaUcnbiU?si=HBylmd1jpiho7qqo" allowfullscreen title="YouTube Video 1"></iframe>
+    <iframe src="https://www.youtube.com/embed/9hG_oOjtOS0" allowfullscreen title="YouTube Video 2"></iframe>
+    <iframe src="https://www.youtube.com/embed/3uQ7Cwey-iQ" allowfullscreen title="YouTube Video 3"></iframe>
+    <!-- Add more YouTube iframes here -->
+  </section>
 
-  <h2>Featured Kick VOD</h2>
-  <div>
-    <iframe
-      src="https://kick.com/embed/video/8a495175-1a1f-4a5b-a459-ffaee2db50dc"
-      allowfullscreen
-      title="Kick VOD"
-      width="560"
-      height="315"
-    ></iframe>
-  </div>
+  <section>
+    <h2>Kick VODs</h2>
+    <iframe src="https://kick.com/embed/video/8a495175-1a1f-4a5b-a459-ffaee2db50dc" allowfullscreen title="Kick VOD 1"></iframe>
+    <!-- Add more Kick VOD iframes here -->
+  </section>
 
-  <button class="toggle-btn" id="toggleYouTubeBtn">Show YouTube Videos</button>
-
-  <div class="video-grid" id="youtubeVideos" style="display:none;">
-    <div>
-      <iframe
-        src="https://www.youtube.com/embed/FDInaUcnbiU?si=HBylmd1jpiho7qqo"
-        allowfullscreen
-        title="YouTube Video 1"
-      ></iframe>
-      <div class="vod-title">Video 1</div>
-    </div>
-    <div>
-      <iframe
-        src="https://www.youtube.com/embed/9hG_oOjtOS0"
-        allowfullscreen
-        title="YouTube Video 2"
-      ></iframe>
-      <div class="vod-title">Video 2</div>
-    </div>
-    <div>
-      <iframe
-        src="https://www.youtube.com/embed/3uQ7Cwey-iQ"
-        allowfullscreen
-        title="YouTube Video 3"
-      ></iframe>
-      <div class="vod-title">Video 3</div>
-    </div>
-    <div>
-      <iframe
-        src="https://www.youtube.com/embed/CExM_zN-8ho"
-        allowfullscreen
-        title="YouTube Video 4"
-      ></iframe>
-      <div class="vod-title">Video 4</div>
-    </div>
-    <div>
-      <iframe
-        src="https://www.youtube.com/embed/ETFRYnC16Fw"
-        allowfullscreen
-        title="YouTube Video 5"
-      ></iframe>
-      <div class="vod-title">Video 5</div>
-    </div>
-    <div>
-      <iframe
-        src="https://www.youtube.com/embed/jHoIlAta1G0"
-        allowfullscreen
-        title="YouTube Video 6"
-      ></iframe>
-      <div class="vod-title">Video 6</div>
-    </div>
-    <div>
-      <iframe
-        src="https://www.youtube.com/embed/-qTF-YrcICc"
-        allowfullscreen
-        title="YouTube Video 7"
-      ></iframe>
-      <div class="vod-title">Video 7</div>
-    </div>
-    <div>
-      <iframe
-        src="https://www.youtube.com/embed/d37T5Y9RoSM"
-        allowfullscreen
-        title="YouTube Video 8"
-      ></iframe>
-      <div class="vod-title">Video 8</div>
-    </div>
-    <div>
-      <iframe
-        src="https://www.youtube.com/embed/KjdMlu5D_5w"
-        allowfullscreen
-        title="YouTube Video 9"
-      ></iframe>
-      <div class="vod-title">Video 9</div>
-    </div>
-    <div>
-      <iframe
-        src="https://www.youtube.com/embed/GQQPBF82hH4"
-        allowfullscreen
-        title="YouTube Video 10"
-      ></iframe>
-      <div class="vod-title">Video 10</div>
-    </div>
-  </div>
-
-  <script>
-    const toggleBtn = document.getElementById('toggleYouTubeBtn');
-    const ytVideos = document.getElementById('youtubeVideos');
-    let isVisible = false;
-
-    toggleBtn.addEventListener('click', () => {
-      isVisible = !isVisible;
-      ytVideos.style.display = isVisible ? 'grid' : 'none';
-      toggleBtn.textContent = isVisible ? 'Hide YouTube Videos' : 'Show YouTube Videos';
-    });
-  </script>
+  <section>
+    <h2>TikTok Videos</h2>
+    <iframe src="https://www.tiktok.com/embed/v2/7209171234567891234" allowfullscreen title="TikTok Video 1"></iframe>
+    <!-- Add more TikTok iframes here -->
+  </section>
 </body>
 </html>
