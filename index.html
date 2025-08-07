@@ -7,6 +7,7 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
+    /* Background fixed behind everything */
     body {
       margin: 0;
       min-height: 100vh;
@@ -18,6 +19,8 @@
       align-items: center;
       padding: 2rem;
       text-shadow: 0 0 8px rgba(128, 0, 255, 0.8);
+      position: relative;
+      z-index: 1;
     }
 
     h1 {
@@ -26,6 +29,7 @@
       letter-spacing: 2px;
       text-align: center;
       user-select: none;
+      z-index: 10;
     }
 
     p.subtitle {
@@ -34,6 +38,7 @@
       margin-bottom: 3rem;
       text-align: center;
       max-width: 600px;
+      z-index: 10;
     }
 
     .socials {
@@ -43,6 +48,7 @@
       justify-content: center;
       max-width: 600px;
       margin-bottom: 3rem;
+      z-index: 10;
     }
 
     .socials a {
@@ -57,6 +63,7 @@
       transition: all 0.3s ease;
       filter: drop-shadow(0 0 4px #a061ff);
       text-decoration: none;
+      z-index: 10;
     }
 
     .socials a:hover {
@@ -73,14 +80,21 @@
       user-select: none;
       filter: invert(100%) brightness(130%);
       object-fit: contain;
+      z-index: 10;
     }
 
-    /* Video grid styles */
+    /* Videos section */
     .videos-section {
       width: 100%;
       max-width: 1000px;
       margin-bottom: 3rem;
+      background: rgba(30, 0, 50, 0.5);
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 0 15px #bb8affaa;
+      z-index: 10;
     }
+
     .videos-section h2 {
       text-align: center;
       color: #b993d6;
@@ -89,17 +103,21 @@
       user-select: none;
       text-shadow: 0 0 6px #bb8aff;
     }
+
     .videos-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 1.5rem;
     }
+
     .videos-grid iframe {
       width: 100%;
       aspect-ratio: 16 / 9;
       border-radius: 12px;
       box-shadow: 0 0 20px #bb8affaa;
       border: none;
+      background: black;
+      z-index: 10;
     }
 
     /* Gallery section */
@@ -107,7 +125,13 @@
       width: 100%;
       max-width: 1000px;
       margin-bottom: 2rem;
+      background: rgba(30, 0, 50, 0.5);
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 0 15px #bb8affaa;
+      z-index: 10;
     }
+
     .gallery-section h2 {
       text-align: center;
       color: #b993d6;
@@ -116,12 +140,14 @@
       user-select: none;
       text-shadow: 0 0 6px #bb8aff;
     }
+
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 1rem;
       justify-items: center;
     }
+
     .gallery-grid img, 
     .gallery-grid video {
       width: 100%;
@@ -129,7 +155,9 @@
       border-radius: 12px;
       box-shadow: 0 0 15px #bb8aff88;
       object-fit: cover;
+      z-index: 10;
     }
+
     .gallery-grid video {
       aspect-ratio: 16 / 9;
       background: black;
@@ -142,6 +170,7 @@
       color: #bb99ffcc;
       user-select: none;
       text-align: center;
+      z-index: 10;
     }
 
     @media (max-width: 480px) {
@@ -198,7 +227,6 @@
   <section class="videos-section" aria-label="Popular YouTube videos">
     <h2>Popular YouTube Videos</h2>
     <div class="videos-grid">
-      <!-- Embed your videos here -->
       <iframe src="https://www.youtube.com/embed/FDInaUcnbiU?si=HBylmd1jpiho7qqo" title="YouTube video 1" allowfullscreen></iframe>
       <iframe src="https://www.youtube.com/embed/9hG_oOjtOS0?si=PsPxosa5Ihh7LY5y" title="YouTube video 2" allowfullscreen></iframe>
       <iframe src="https://www.youtube.com/embed/3uQ7Cwey-iQ?si=_IQGcshxFtoIFTCo" title="YouTube video 3" allowfullscreen></iframe>
@@ -212,13 +240,12 @@
     </div>
   </section>
 
-  <section class="gallery-section" aria-label="Photos and video gallery">
+  <section class="gallery-section" aria-label="Gallery">
     <h2>Gallery</h2>
     <div class="gallery-grid">
-      <img src="https://cdn.discordapp.com/attachments/1264615046340677768/1401102597271719957/image.png?ex=6895a57a&is=689453fa&hm=197474bc28a818fda7bfbb1ce57a0e9ca198fbcc99b9abfa54b1290169e9abd5" alt="KingChief Image 1" />
-      <img src="https://cdn.discordapp.com/attachments/1264615046340677768/1400109071276970135/temp_image_DA688848-73D2-453A-8149-EF31DBF6C4CC.webp?ex=689553ef&is=6894026f&hm=0f5eac7a29957d19c42a5b3f7bc6e3606b032a7e7b38216773fa8a6ce5f6360a" alt="KingChief Image 2" />
-      <img src="https://cdn.discordapp.com/attachments/1199777113998360576/1301037026312847362/kingteeth.gif?ex=68957a27&is=689428a7&hm=4bd9556e54fb264354e6ba60f1cbe1ff211b76b430cdb0f48be153546feeca36" alt="KingChief Teeth GIF" />
-      <video src="https://cdn.discordapp.com/attachments/1264615046340677768/1393919155568250900/fneslgwbq4hs.mp4?ex=689538a0&is=6893e720&hm=48581160cd23b22fe0ccc959a80aeabfbdb234e94a5f70cf275ff3136be65bed" controls muted loop></video>
+      <img src="https://cdn.discordapp.com/attachments/1264615046340677768/1401102597271719957/image.png" alt="Gallery Image 1" />
+      <img src="https://cdn.discordapp.com/attachments/1264615046340677768/1400109071276970135/temp_image_DA688848-73D2-453A-8149-EF31DBF6C4CC.webp" alt="Gallery Image 2" />
+      <img src="https://cdn.discordapp.com/attachments/1264615046340677768/1393919155568250900/fneslgwbq4hs.mp4?ex=689538a0&is=6893e720&hm=48581160cd23b22fe0ccc959a80aeabfbdb234e94a5f70cf275ff3136be65bed" controls muted loop></video>
     </div>
   </section>
 
