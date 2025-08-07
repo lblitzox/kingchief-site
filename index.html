@@ -1,135 +1,113 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>KingChief</title>
-
-  <!-- Font Awesome for icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
-
   <style>
-    /* Reset and base */
     body {
-      margin: 0;
-      padding: 0;
+      margin: 0; padding: 0;
+      background: #000;
+      color: #fff;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0b0033; /* deep dark purple */
-      color: #d0d0ff;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
       align-items: center;
       text-align: center;
     }
-
     header {
       width: 100%;
-      padding: 25px 0;
-      background: linear-gradient(90deg, #5400ff, #00ff99);
-      box-shadow: 0 0 15px #00ff99aa;
-      margin-bottom: 30px;
-    }
-
-    header .logo {
-      font-size: 2.5rem;
-      font-weight: 900;
-      letter-spacing: 3px;
-      color: white;
-      text-shadow: 0 0 10px #00ff99;
-      user-select: none;
-    }
-
-    nav {
-      margin-top: 15px;
+      background: #111;
+      border-bottom: 1px solid #333;
+      padding: 20px;
       display: flex;
-      justify-content: center;
-      gap: 35px;
+      justify-content: space-between;
+      align-items: center;
       flex-wrap: wrap;
     }
-
-    nav a {
-      color: #d0d0ff;
-      font-weight: 600;
-      text-decoration: none;
-      font-size: 1.1rem;
-      padding: 8px 12px;
-      border-radius: 5px;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    nav a:hover {
-      background-color: #00ff99;
-      color: #000;
-      box-shadow: 0 0 15px #00ff99;
-    }
-
-    .socials {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin: 40px 0 20px 0;
-    }
-
-    .socials a {
-      color: #d0d0ff;
-      font-size: 2.5rem;
-      transition: color 0.3s, transform 0.3s;
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
       user-select: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
-
-    .socials a:hover {
-      color: #00ff99;
+    .logo img {
+      max-height: 40px;
+    }
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #00ff88;
+    }
+    .socials {
+      margin: 20px 0;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .socials a svg {
+      width: 32px;
+      height: 32px;
+      fill: #fff;
+      transition: fill 0.3s, transform 0.3s;
+      cursor: pointer;
+    }
+    .socials a:hover svg {
+      fill: #00ff88;
       transform: scale(1.2);
-      text-shadow: 0 0 15px #00ff99;
     }
-
-    /* YouTube embed container for 16:9 ratio */
     .video-container {
       width: 90%;
       max-width: 900px;
       aspect-ratio: 16 / 9;
-      box-shadow: 0 0 30px #00ff99aa;
-      border-radius: 15px;
+      margin: 40px 0;
+      border-radius: 12px;
       overflow: hidden;
-      margin-bottom: 50px;
+      box-shadow: 0 0 20px #00ff8840;
     }
-
     iframe {
       width: 100%;
       height: 100%;
       border: none;
       display: block;
     }
-
     footer {
       font-size: 14px;
-      color: #8888cc;
-      padding: 20px;
+      color: #666;
       margin-top: auto;
+      padding: 20px;
       user-select: none;
     }
-
-    @media (max-width: 480px) {
-      nav {
-        gap: 15px;
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
       }
       nav a {
-        font-size: 1rem;
-        padding: 6px 8px;
-      }
-      .socials a {
-        font-size: 2rem;
+        margin-left: 0;
+        margin-right: 15px;
+        display: inline-block;
+        margin-top: 8px;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">KINGCHIEF.WTF</div>
+    <div class="logo">
+      <img src="https://cdn.discordapp.com/attachments/1185872697671024702/1335140696524460113/CROWN_GIF.gif?ex=68959eab&is=68944d2b&hm=b425f9e4ccae5c39b0ec6e8a362b8321be66902556255486dca5a464a00ab124&" alt="Crown Logo" />
+      KINGCHIEF.WTF
+    </div>
     <nav>
       <a href="#videos">Videos</a>
       <a href="https://kick.com/kingchief" target="_blank" rel="noopener noreferrer">Live</a>
@@ -138,30 +116,29 @@
     </nav>
   </header>
 
-  <div class="socials" aria-label="Social Media Links">
+  <div class="socials" aria-label="Social Links">
     <a href="https://kick.com/kingchief" target="_blank" title="Kick" rel="noopener noreferrer" aria-label="Kick">
-      <i class="fa-brands fa-kickstarter-k"></i>
+      <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M120 120h96v88h64l56-88h80l-64 96 64 96h-80l-56-88h-64v88h-96V120z"/></svg>
     </a>
     <a href="https://youtube.com/@KingChoif" target="_blank" title="YouTube" rel="noopener noreferrer" aria-label="YouTube">
-      <i class="fa-brands fa-youtube"></i>
+      <svg viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><path d="M549.7 124.1c-6.3-23.7-24.8-42.2-48.5-48.5C456.5 64 288 64 288 64S119.5 64 74.8 75.6c-23.7 6.3-42.2 24.8-48.5 48.5C16.7 168.8 16 224 16 224s.7 55.2 10.3 99.9c6.3 23.7 24.8 42.2 48.5 48.5C119.5 384 288 384 288 384s168.5 0 213.2-11.6c23.7-6.3 42.2-24.8 48.5-48.5 9.6-44.7 10.3-99.9 10.3-99.9s-.7-55.2-10.3-99.9zM232 312V136l142 88-142 88z"/></svg>
     </a>
     <a href="https://www.tiktok.com/@kingchoif" target="_blank" title="TikTok" rel="noopener noreferrer" aria-label="TikTok">
-      <i class="fa-brands fa-tiktok"></i>
+      <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M448 209.9v125.1c-30.7 0-60.4-5.3-88.3-15.1v92.1c0 54.5-44.2 98.8-98.8 98.8s-98.8-44.2-98.8-98.8 44.2-98.8 98.8-98.8c8.8 0 17.3 1.2 25.4 3.3v60.7c-8.1-2.1-16.6-3.3-25.4-3.3-34.5 0-62.5 28-62.5 62.5s28 62.5 62.5 62.5 62.5-28 62.5-62.5v-299.6h61.7c0 45.1 36.6 81.7 81.7 81.7z"/></svg>
     </a>
     <a href="https://discord.gg/JsUVx2XWkD" target="_blank" title="Discord" rel="noopener noreferrer" aria-label="Discord">
-      <i class="fa-brands fa-discord"></i>
+      <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M297.216 243.2c-12.032 0-21.952 10.048-21.952 22.464s9.728 22.464 21.952 22.464c12.288 0 22.016-10.048 22.016-22.464s-9.728-22.464-22.016-22.464zm-82.432 0c-12.032 0-21.952 10.048-21.952 22.464s9.728 22.464 21.952 22.464c12.288 0 22.016-10.048 22.016-22.464s-9.728-22.464-22.016-22.464zm122.176-64.128s-11.264-13.312-41.216-13.312c-29.824 0-41.216 13.312-41.216 13.312-33.024-4.608-46.848-22.016-46.848-22.016-13.312-19.456-16.768-38.4-16.768-38.4-28.16-2.56-3.072-11.264-3.072-11.264 58.88-18.944 104.32-18.944 104.32-18.944 41.216 0 76.8 18.944 76.8 18.944s46.08 15.36 56.832 18.944c0 0 2.048 7.168-3.072 10.752 0 0-11.776 17.152-46.336 21.248z"/></svg>
     </a>
   </div>
 
-  <section id="videos" class="video-container" role="region" aria-label="Featured YouTube Video">
-    <!-- Replace the src with the YouTube video you want -->
+  <div class="video-container" id="videos" aria-label="KingChief YouTube Video">
     <iframe
       src="https://www.youtube.com/embed/_NVjZj8xkaA"
       title="KingChief YouTube Video"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen
     ></iframe>
-  </section>
+  </div>
 
   <footer>
     &copy; 2025 KINGCHIEF. Made for the streets. Not by AI. 💯
