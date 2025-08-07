@@ -3,272 +3,163 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>KingChief Watch - Videos & Socials</title>
+  <title>KingChief Social Hub</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+    /* Background with purple city silhouette + gradient */
     body {
-      background-color: #0d0d0d;
-      color: #eee;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
+      min-height: 100vh;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #4b0082 0%, #1a0047 70%), 
+        url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80') no-repeat center bottom;
+      background-size: cover;
+      color: #eee;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       padding: 2rem;
+      text-shadow: 0 0 8px rgba(128, 0, 255, 0.8);
     }
 
     h1 {
-      text-align: center;
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin-bottom: 1rem;
-      font-weight: 700;
+      letter-spacing: 2px;
+      text-align: center;
+      user-select: none;
     }
 
-    /* Socials container */
+    p.subtitle {
+      font-weight: 400;
+      color: #d2aaffcc;
+      margin-bottom: 3rem;
+      text-align: center;
+      max-width: 600px;
+    }
+
+    /* Social icons container */
     .socials {
       display: flex;
-      justify-content: center;
-      gap: 1.25rem;
-      margin-bottom: 2rem;
+      gap: 2rem;
       flex-wrap: wrap;
+      justify-content: center;
+      max-width: 600px;
     }
 
-    .socials a img {
-      width: 48px;
-      height: 48px;
+    /* Social link styles */
+    .socials a {
+      display: inline-flex;
+      width: 60px;
+      height: 60px;
+      background: rgba(75, 0, 130, 0.5);
       border-radius: 50%;
-      border: none !important;
-      box-shadow: none !important;
-      object-fit: cover;
-      transition: transform 0.25s ease, filter 0.25s ease, box-shadow 0.25s ease;
-      filter: invert(1);
-      background: transparent;
-      display: block;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 10px #8e2de2;
+      transition: all 0.3s ease;
+      filter: drop-shadow(0 0 4px #a061ff);
+      text-decoration: none;
     }
 
-    /* Override filter for Kick & YouTube profile pics (not logos) */
-    .socials a.kick img,
-    .socials a.youtube img {
-      filter: none;
-    }
-
-    .socials a:hover img {
+    .socials a:hover {
+      background: #8e2de2;
+      box-shadow: 0 0 15px #bb8aff, 0 0 30px #bb8aff;
+      filter: drop-shadow(0 0 8px #bb8aff);
       transform: scale(1.15);
-      filter: drop-shadow(0 0 5px #1da1f2);
       cursor: pointer;
     }
 
-    /* Video grid */
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 1.5rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .video-card {
-      background: #1c1c1c;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 0 10px rgba(0,0,0,0.7);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .video-card iframe {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      border: none;
-      display: block;
-    }
-
-    .video-title {
-      padding: 0.75rem 1rem;
-      font-weight: 600;
-      font-size: 1rem;
-      color: #ccc;
-      text-align: center;
+    /* Social icon images and SVG */
+    .socials img, .socials svg {
+      width: 32px;
+      height: 32px;
+      filter: invert(100%) brightness(130%);
       user-select: none;
-      background: #111;
-      flex-grow: 0;
     }
 
-    /* Responsive tweaks */
+    /* Remove invert for profile pics */
+    .socials a.kick img,
+    .socials a.youtube img {
+      filter: none;
+      border-radius: 50%;
+    }
+
+    /* Footer text */
+    footer {
+      margin-top: auto;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: #bb99ffcc;
+      user-select: none;
+      text-align: center;
+    }
+
+    /* Responsive adjustments */
     @media (max-width: 480px) {
-      h1 {
-        font-size: 1.8rem;
+      .socials {
+        gap: 1rem;
       }
-      .socials a img {
-        width: 40px;
-        height: 40px;
+      .socials a {
+        width: 48px;
+        height: 48px;
+      }
+      .socials img, .socials svg {
+        width: 24px;
+        height: 24px;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      p.subtitle {
+        max-width: 100%;
       }
     }
   </style>
 </head>
 <body>
-  <h1>KingChief Watch - Videos & Socials</h1>
+  <h1>KingChief Social Hub</h1>
+  <p class="subtitle">Follow KingChief across all platforms and stay updated with the latest content and streams!</p>
 
   <nav class="socials" aria-label="Social media links">
     <a class="kick" href="https://kick.com/kingchief" target="_blank" rel="noopener" title="Kick">
-      <img
-        src="https://files.kick.com/avatars/kingchief.png"
-        alt="KingChief on Kick"
-        loading="lazy"
-      />
+      <img src="https://files.kick.com/avatars/kingchief.png" alt="KingChief Kick Profile" loading="lazy" />
     </a>
 
     <a class="youtube" href="https://www.youtube.com/@KingChoif" target="_blank" rel="noopener" title="YouTube">
-      <img
-        src="https://yt3.googleusercontent.com/ytc/AGIKgqMqXVcY--9ZClQ3EgmuOUWCH8_w6t9pkTVHwg=s88-c-k-c0x00ffffff-no-rj"
-        alt="KingChief on YouTube"
-        loading="lazy"
-      />
+      <img src="https://yt3.googleusercontent.com/ytc/AGIKgqMqXVcY--9ZClQ3EgmuOUWCH8_w6t9pkTVHwg=s88-c-k-c0x00ffffff-no-rj" alt="KingChief YouTube Profile" loading="lazy" />
     </a>
 
-    <a href="https://tiktok.com/@kingchoif" target="_blank" rel="noopener" title="TikTok">
-      <img
-        src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg"
-        alt="TikTok"
-        style="border-radius:12px; filter: invert(1);"
-        loading="lazy"
-      />
+    <a href="https://twitter.com/ChiefzBlock" target="_blank" rel="noopener" title="Twitter" aria-label="Twitter">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/twitter.svg" alt="Twitter" />
     </a>
 
-    <a href="https://twitter.com/ChiefzBlock" target="_blank" rel="noopener" title="Twitter">
-      <img
-        src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/twitter.svg"
-        alt="Twitter"
-        style="filter: invert(1);"
-        loading="lazy"
-      />
+    <a href="https://instagram.com/kingchiefx" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/instagram.svg" alt="Instagram" />
     </a>
 
-    <a href="https://instagram.com/kingchiefx" target="_blank" rel="noopener" title="Instagram">
-      <img
-        src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/instagram.svg"
-        alt="Instagram"
-        style="filter: invert(1);"
-        loading="lazy"
-      />
+    <a href="https://discord.gg/JsUVx2XWkD" target="_blank" rel="noopener" title="Discord" aria-label="Discord">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/discord.svg" alt="Discord" />
     </a>
 
-    <a href="https://discord.gg/JsUVx2XWkD" target="_blank" rel="noopener" title="Discord">
-      <img
-        src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/discord.svg"
-        alt="Discord"
-        style="filter: invert(1);"
-        loading="lazy"
-      />
+    <a href="https://tiktok.com/@kingchoif" target="_blank" rel="noopener" title="TikTok" aria-label="TikTok">
+      <svg
+        width="32"
+        height="32"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        style="filter: invert(1) brightness(1.3);"
+      >
+        <path
+          fill="currentColor"
+          d="M9 2v12.364a3.136 3.136 0 0 1-3.136-3.136H4.5A4.5 4.5 0 0 0 9 16.364V6h3v12a6 6 0 1 0-3-11.798V2z"
+        />
+      </svg>
     </a>
   </nav>
 
-  <section class="video-grid" aria-label="Popular YouTube videos">
-    <!-- Video 1 -->
-    <div class="video-card">
-      <iframe
-        src="https://www.youtube.com/embed/FDInaUcnbiU?si=HBylmd1jpiho7qqo"
-        title="Popular video 1"
-        allowfullscreen
-        loading="lazy"
-      ></iframe>
-      <div class="video-title">Popular Video 1</div>
-    </div>
-
-    <!-- Video 2 -->
-    <div class="video-card">
-      <iframe
-        src="https://www.youtube.com/embed/9hG_oOjtOS0?si=PsPxosa5Ihh7LY5y"
-        title="Popular video 2"
-        allowfullscreen
-        loading="lazy"
-      ></iframe>
-      <div class="video-title">Popular Video 2</div>
-    </div>
-
-    <!-- Video 3 -->
-    <div class="video-card">
-      <iframe
-        src="https://www.youtube.com/embed/3uQ7Cwey-iQ?si=_IQGcshxFtoIFTCo"
-        title="Popular video 3"
-        allowfullscreen
-        loading="lazy"
-      ></iframe>
-      <div class="video-title">Popular Video 3</div>
-    </div>
-
-    <!-- Video 4 -->
-    <div class="video-card">
-      <iframe
-        src="https://www.youtube.com/embed/CExM_zN-8ho?si=1njt0z4z8l17xb0-"
-        title="Popular video 4"
-        allowfullscreen
-        loading="lazy"
-      ></iframe>
-      <div class="video-title">Popular Video 4</div>
-    </div>
-
-    <!-- Video 5 -->
-    <div class="video-card">
-      <iframe
-        src="https://www.youtube.com/embed/ETFRYnC16Fw?si=gxmU0-NQQcaAruGe"
-        title="Popular video 5"
-        allowfullscreen
-        loading="lazy"
-      ></iframe>
-      <div class="video-title">Popular Video 5</div>
-    </div>
-
-    <!-- Video 6 -->
-    <div class="video-card">
-      <iframe
-        src="https://www.youtube.com/embed/jHoIlAta1G0?si=KGIoQcMP57vr03n9"
-        title="Popular video 6"
-        allowfullscreen
-        loading="lazy"
-      ></iframe>
-      <div class="video-title">Popular Video 6</div>
-    </div>
-
-    <!-- Video 7 -->
-    <div class="video-card">
-      <iframe
-        src="https://www.youtube.com/embed/-qTF-YrcICc?si=WwTvg1zw08uY1Wwe"
-        title="Popular video 7"
-        allowfullscreen
-        loading="lazy"
-      ></iframe>
-      <div class="video-title">Popular Video 7</div>
-    </div>
-
-    <!-- Video 8 -->
-    <div class="video-card">
-      <iframe
-        src="https://www.youtube.com/embed/d37T5Y9RoSM?si=-xjcqVnwwxEbXaQB"
-        title="Popular video 8"
-        allowfullscreen
-        loading="lazy"
-      ></iframe>
-      <div class="video-title">Popular Video 8</div>
-    </div>
-
-    <!-- Video 9 -->
-    <div class="video-card">
-      <iframe
-        src="https://www.youtube.com/embed/KjdMlu5D_5w?si=d7EaGfnN323TA98C"
-        title="Popular video 9"
-        allowfullscreen
-        loading="lazy"
-      ></iframe>
-      <div class="video-title">Popular Video 9</div>
-    </div>
-
-    <!-- Video 10 -->
-    <div class="video-card">
-      <iframe
-        src="https://www.youtube.com/embed/GQQPBF82hH4?si=qL6WsUqZ2F4k1Obd"
-        title="Popular video 10"
-        allowfullscreen
-        loading="lazy"
-      ></iframe>
-      <div class="video-title">Popular Video 10</div>
-    </div>
-  </section>
+  <footer>© 2025 KingChief. All rights reserved.</footer>
 </body>
 </html>
