@@ -7,8 +7,8 @@
   <style>
     body {
       margin: 0; padding: 0;
-      background: #000;
-      color: #fff;
+      background-color: #1a0050; /* deep purple */
+      color: #eee;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
       flex-direction: column;
@@ -18,62 +18,69 @@
     }
     header {
       width: 100%;
-      background: #111;
-      border-bottom: 1px solid #333;
+      background: #2e0077;
+      border-bottom: 1px solid #440099;
       padding: 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
+      box-shadow: 0 0 15px #00ff88aa;
     }
     .logo {
-      font-size: 24px;
+      font-size: 28px;
       font-weight: bold;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
       user-select: none;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
+      color: #aaffcc;
+      text-shadow: 0 0 8px #00ff88aa;
     }
     .logo img {
       max-height: 40px;
     }
     nav a {
-      color: #fff;
+      color: #aaffcc;
       margin-left: 20px;
       text-decoration: none;
       font-weight: 600;
-      transition: color 0.3s;
+      transition: color 0.3s, text-shadow 0.3s;
     }
     nav a:hover {
       color: #00ff88;
+      text-shadow: 0 0 12px #00ff88;
     }
     .socials {
       margin: 20px 0;
       display: flex;
-      gap: 20px;
+      gap: 25px;
       justify-content: center;
       flex-wrap: wrap;
     }
     .socials a svg {
       width: 32px;
       height: 32px;
-      fill: #fff;
-      transition: fill 0.3s, transform 0.3s;
+      fill: #aaffcc;
       cursor: pointer;
+      transition: fill 0.3s ease, transform 0.3s ease;
+      filter: drop-shadow(0 0 4px #00ff88);
     }
     .socials a:hover svg {
       fill: #00ff88;
       transform: scale(1.2);
+      filter: drop-shadow(0 0 8px #00ff88);
     }
     .video-container {
       width: 90%;
       max-width: 900px;
       aspect-ratio: 16 / 9;
-      margin: 40px 0;
-      border-radius: 12px;
+      margin: 40px 0 60px;
+      border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 0 20px #00ff8840;
+      box-shadow: 0 0 25px #00ff8820;
+      background: black;
     }
     iframe {
       width: 100%;
@@ -83,10 +90,11 @@
     }
     footer {
       font-size: 14px;
-      color: #666;
+      color: #99ccaa;
       margin-top: auto;
-      padding: 20px;
+      padding: 20px 10px;
       user-select: none;
+      text-shadow: 0 0 5px #00ff88;
     }
     @media (max-width: 600px) {
       header {
@@ -105,7 +113,10 @@
 <body>
   <header>
     <div class="logo">
-      <img src="https://cdn.discordapp.com/attachments/1185872697671024702/1335140696524460113/CROWN_GIF.gif?ex=68959eab&is=68944d2b&hm=b425f9e4ccae5c39b0ec6e8a362b8321be66902556255486dca5a464a00ab124&" alt="Crown Logo" />
+      <img
+        src="https://cdn.discordapp.com/attachments/1185872697671024702/1335140696524460113/CROWN_GIF.gif?ex=68959eab&is=68944d2b&hm=b425f9e4ccae5c39b0ec6e8a362b8321be66902556255486dca5a464a00ab124&"
+        alt="Crown Logo"
+      />
       KINGCHIEF.WTF
     </div>
     <nav>
