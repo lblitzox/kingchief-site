@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>KingChief VODs</title>
+  <title>KingChief YouTube VODs</title>
   <style>
     body {
-      background: #121212;
+      background: #0d0d0d;
       color: #eee;
       font-family: Arial, sans-serif;
       margin: 2rem;
@@ -15,7 +15,7 @@
     h1 {
       margin-bottom: 1rem;
     }
-    .video-list {
+    .video-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
       gap: 1rem;
@@ -25,8 +25,8 @@
     iframe {
       width: 100%;
       aspect-ratio: 16 / 9;
-      border: none;
       border-radius: 8px;
+      border: none;
     }
     .vod-title {
       margin-top: 0.5rem;
@@ -35,17 +35,49 @@
   </style>
 </head>
 <body>
-  <h1>KingChief Kick VODs</h1>
-  <div class="video-list">
-    <div>
-      <iframe src="https://kick.com/embed/video/8a495175-1a1f-4a5b-a459-ffaee2db50dc" allowfullscreen></iframe>
-      <div class="vod-title">Sample VOD 1</div>
-    </div>
-    <div>
-      <iframe src="https://kick.com/embed/video/another-vod-id" allowfullscreen></iframe>
-      <div class="vod-title">Sample VOD 2</div>
-    </div>
-    <!-- Add more VOD blocks here manually -->
-  </div>
+  <h1>KingChief YouTube VODs</h1>
+  <div id="videos" class="video-grid"></div>
+
+  <script>
+    const API_KEY = 'AIzaSyACiDVrDOBg4yOoyyMGG1hngy-Y4MTsE9g';  // Your YouTube API key
+    const CHANNEL_ID = 'UCUuqJse8iS2E4XP1p9u20zg'; // KingChoif channel ID
+
+    async function fetchUploadsPlaylist() {
+      const res = await fetch(`https://www.googleapis.com/youtube/v3/channels?part=contentDetails&id=${CHANNEL_ID}&key=${API_KEY}`);
+      const data = await res.json();
+      return data.items[0].contentDetails.relatedPlaylists.uploads;
+    }
+
+    async function fetchVideos(playlistId, pageToken = '') {
+      const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=20&playlistId=${playlistId}&key=${API_KEY}${pageToken ? '&pageToken=' + pageToken : ''}`;
+      const res = await fetch(url);
+      return await res.json();
+    }
+
+    async function renderVideos() {
+      const uploadsPlaylistId = await fetchUploadsPlaylist();
+      let nextPageToken = '';
+      const container = document.getElementById('videos');
+
+      do {
+        const videosData = await fetchVideos(uploadsPlaylistId, nextPageToken);
+        videosData.items.forEach(item => {
+          const videoId = item.snippet.resourceId.videoId;
+          const title = item.snippet.title;
+
+          const videoDiv = document.createElement('div');
+          videoDiv.innerHTML = `
+            <iframe src="https://www.youtube.com/embed/${videoId}" allowfullscreen></iframe>
+            <div class="vod-title">${title}</div>
+          `;
+          container.appendChild(videoDiv);
+        });
+
+        nextPageToken = videosData.nextPageToken;
+      } while(nextPageToken);
+    }
+
+    renderVideos().catch(console.error);
+  </script>
 </body>
 </html>
