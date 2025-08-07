@@ -7,14 +7,11 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-    /* Background with purple city silhouette + gradient */
     body {
       margin: 0;
       min-height: 100vh;
       font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(135deg, #4b0082 0%, #1a0047 70%), 
-        url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80') no-repeat center bottom;
-      background-size: cover;
+      background: linear-gradient(135deg, #4b0082 0%, #1a0047 70%);
       color: #eee;
       display: flex;
       flex-direction: column;
@@ -39,7 +36,6 @@
       max-width: 600px;
     }
 
-    /* Social icons container */
     .socials {
       display: flex;
       gap: 2rem;
@@ -48,7 +44,6 @@
       max-width: 600px;
     }
 
-    /* Social link styles */
     .socials a {
       display: inline-flex;
       width: 60px;
@@ -71,22 +66,13 @@
       cursor: pointer;
     }
 
-    /* Social icon images and SVG */
-    .socials img, .socials svg {
+    .socials img {
       width: 32px;
       height: 32px;
       filter: invert(100%) brightness(130%);
       user-select: none;
     }
 
-    /* Remove invert for profile pics */
-    .socials a.kick img,
-    .socials a.youtube img {
-      filter: none;
-      border-radius: 50%;
-    }
-
-    /* Footer text */
     footer {
       margin-top: auto;
       margin-bottom: 1rem;
@@ -96,7 +82,6 @@
       text-align: center;
     }
 
-    /* Responsive adjustments */
     @media (max-width: 480px) {
       .socials {
         gap: 1rem;
@@ -105,7 +90,7 @@
         width: 48px;
         height: 48px;
       }
-      .socials img, .socials svg {
+      .socials img {
         width: 24px;
         height: 24px;
       }
@@ -123,40 +108,28 @@
   <p class="subtitle">Follow KingChief across all platforms and stay updated with the latest content and streams!</p>
 
   <nav class="socials" aria-label="Social media links">
-    <a class="kick" href="https://kick.com/kingchief" target="_blank" rel="noopener" title="Kick">
-      <img src="https://files.kick.com/avatars/kingchief.png" alt="KingChief Kick Profile" loading="lazy" />
+    <a href="https://kick.com/kingchief" target="_blank" rel="noopener" title="Kick">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/kick.svg" alt="Kick Logo" />
     </a>
 
-    <a class="youtube" href="https://www.youtube.com/@KingChoif" target="_blank" rel="noopener" title="YouTube">
-      <img src="https://yt3.googleusercontent.com/ytc/AGIKgqMqXVcY--9ZClQ3EgmuOUWCH8_w6t9pkTVHwg=s88-c-k-c0x00ffffff-no-rj" alt="KingChief YouTube Profile" loading="lazy" />
+    <a href="https://www.youtube.com/@KingChoif" target="_blank" rel="noopener" title="YouTube">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube Logo" />
     </a>
 
-    <a href="https://twitter.com/ChiefzBlock" target="_blank" rel="noopener" title="Twitter" aria-label="Twitter">
-      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/twitter.svg" alt="Twitter" />
+    <a href="https://twitter.com/ChiefzBlock" target="_blank" rel="noopener" title="Twitter">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/twitter.svg" alt="Twitter Logo" />
     </a>
 
-    <a href="https://instagram.com/kingchiefx" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">
-      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/instagram.svg" alt="Instagram" />
+    <a href="https://instagram.com/kingchiefx" target="_blank" rel="noopener" title="Instagram">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram Logo" />
     </a>
 
-    <a href="https://discord.gg/JsUVx2XWkD" target="_blank" rel="noopener" title="Discord" aria-label="Discord">
-      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/discord.svg" alt="Discord" />
+    <a href="https://discord.gg/JsUVx2XWkD" target="_blank" rel="noopener" title="Discord">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg" alt="Discord Logo" />
     </a>
 
-    <a href="https://tiktok.com/@kingchoif" target="_blank" rel="noopener" title="TikTok" aria-label="TikTok">
-      <svg
-        width="32"
-        height="32"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        style="filter: invert(1) brightness(1.3);"
-      >
-        <path
-          fill="currentColor"
-          d="M9 2v12.364a3.136 3.136 0 0 1-3.136-3.136H4.5A4.5 4.5 0 0 0 9 16.364V6h3v12a6 6 0 1 0-3-11.798V2z"
-        />
-      </svg>
+    <a href="https://tiktok.com/@kingchoif" target="_blank" rel="noopener" title="TikTok">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok Logo" />
     </a>
   </nav>
 
