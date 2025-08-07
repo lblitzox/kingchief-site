@@ -2,23 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>KingChief Kick VODs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KingChief VODs</title>
   <style>
-    body { background: #121212; color: white; font-family: Arial, sans-serif; max-width: 900px; margin: 2rem auto; }
-    h1 { text-align: center; margin-bottom: 2rem; }
-    .vod-list { list-style: none; padding: 0; }
-    .vod-list li { margin-bottom: 1rem; }
-    a { color: #0af; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    body {
+      background: #121212;
+      color: #eee;
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 1rem;
+    }
+    .video-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+      gap: 1rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: none;
+      border-radius: 8px;
+    }
+    .vod-title {
+      margin-top: 0.5rem;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
   <h1>KingChief Kick VODs</h1>
-  <ul class="vod-list">
-    <!-- Replace these example links with your actual Kick VOD URLs -->
-    <li><a href="https://kick.com/kingchief/videos/8a495175-1a1f-4a5b-a459-ffaee2db50dc" target="_blank">VOD Title 1</a></li>
-    <li><a href="https://kick.com/kingchief/videos/0bb611e7-c19c-41fd-a235-bcacd46cdf20" target="_blank">VOD Title 2</a></li>
-    <!-- Add more VOD links here -->
-  </ul>
+  <div class="video-list">
+    <div>
+      <iframe src="https://kick.com/embed/video/8a495175-1a1f-4a5b-a459-ffaee2db50dc" allowfullscreen></iframe>
+      <div class="vod-title">Sample VOD 1</div>
+    </div>
+    <div>
+      <iframe src="https://kick.com/embed/video/another-vod-id" allowfullscreen></iframe>
+      <div class="vod-title">Sample VOD 2</div>
+    </div>
+    <!-- Add more VOD blocks here manually -->
+  </div>
 </body>
 </html>
